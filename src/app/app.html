@@ -1,8 +1,10 @@
-@if (true==true){
-<app-navbar [title]="title()"></app-navbar>
+<app-navbar-user [title]="title()"></app-navbar-user>
+(interfaceSelectionnee)="interfaceSelectionnee = $event"
+@if (interfaceSelectionnee=="dev"){
+<app-navbar-dev [title]="title()"></app-navbar-dev>
 }
-@else {
-<app-nav></app-nav>
+@if(interfaceSelectionnee=="user") {
+<app-navbar-user [title]="title()"></app-navbar-user>
 }
 
 <router-outlet></router-outlet>
