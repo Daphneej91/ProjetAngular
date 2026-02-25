@@ -6,11 +6,10 @@ import { Observable } from 'rxjs';
 import {AsyncPipe, DatePipe} from "@angular/common";
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { UpdateMovie } from "../update-movie/update-movie";
 
 @Component({
   selector: 'app-movies-list',
-  imports: [AsyncPipe, DatePipe, RouterLink, UpdateMovie],
+  imports: [AsyncPipe, DatePipe, RouterLink],
   templateUrl: './movies-list.html',
   styleUrl: './movies-list.scss',
 })
