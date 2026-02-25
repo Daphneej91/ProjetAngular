@@ -17,8 +17,7 @@
                     <td>{{movie.director}}</td>
                     <td>{{movie.rate}}</td>
                     <td>{{movie.synopsis}}</td>
-                    <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)"><i class="bi bi-trash"></i></button>
-                        <a [routerLink]="['../update-movie']"><app-update-movie [movie]="movie"></app-update-movie> <button type="button" class="btn btn-danger deleteButton"><i class="bi bi-trash"></i></button></a></td>
+                    <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)"><i class="bi bi-trash"></i></button></td>
                 </tr>
             }
         </table>
