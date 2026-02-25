@@ -1,0 +1,51 @@
+.layout{
+  display: flex;          
+  gap: 24px;
+  
+}
+
+/* 左图固定大小 */
+.poster{
+  width: 260px;
+  height: 360px;
+  
+}
+
+/* ✅ 右侧必须撑满剩余空间，否则文字会掉到下面 */
+.right{
+  flex: 1 ;
+  min-width: 0;
+}
+
+/* 标题 + 评分一行，左右分开 */
+.topline{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.title{
+  margin: 0;
+}
+
+/* 评分样式 */
+.rating{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.synopsis{
+  margin-top: 12px;
+  margin-bottom: 18px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.actions{
+  display: flex;
+  gap: 12px;
+}

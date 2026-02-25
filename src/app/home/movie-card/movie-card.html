@@ -1,12 +1,41 @@
-<nav class="navbar navbar-light navbar-expand bg-light ps-5">
-    <div class="card shadow m-4" style="width: 18rem; min-height: 55rem">
-        @if(movie.image) {
-            <img [src]="'http://localhost:8080/movies/' + movie.id + '/image'" class="card-img-top" alt="">
-        }
-        <div class="card-body">   
-            <h5 class="card-title">{{movie.title}}</h5>   
-            <p class="card-text">{{movie.synopsis}}</p>   
-            <label class="note">Note: {{movie.rate}}</label> 
+<div class="card shadow-sm p-3 m-100">
+  <div class="layout">
+
+    <!-- 左：图片 -->
+    <img
+      class="poster"
+      [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
+      [alt]="movie.title"
+    />
+
+    <!-- 右：所有文字/按钮都必须在这里 -->
+    <div class="right">
+
+      <div class="topline">
+        <h3 class="title">{{ movie.title }}</h3>
+
+        <div class="rating">
+          <span class="star">⭐</span>
+          <span>{{ movie.rate }}/5</span>
         </div>
+      </div>
+
+      <p class="synopsis">
+        {{ movie.synopsis }}
+      </p>
+
+      <div class="actions">
+        <button class="btn btn-outline-primary text-nowrap" (click)="toggleFavorite()">
+          Ajouter à ma liste
+        </button>
+
+        <button class="btn btn-success" (click)="buyNow()">
+          Acheter
+        </button>
+
+        
+      </div>
+
     </div>
-</nav>
+  </div>
+</div>

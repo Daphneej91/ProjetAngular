@@ -14,4 +14,12 @@ import { MovieCard } from './movie-card/movie-card';
 export class Home {
   private readonly moviesApi = inject(MoviesApi)
   movies$: Observable<Movie[]> = this.moviesApi.getMovies()
+
+  onFavorite(movie: any) {
+  movie.isFavorite = !movie.isFavorite;
+}
+
+  onBuy(movie: any) {
+    console.log('buy', movie);
+  }
 }

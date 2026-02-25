@@ -6,4 +6,6 @@ export interface Movie {
   rate?: number;
   synopsis: string;
   image?: string;
+  isFavorite?: boolean; 
+  trailerUrl?: string;
 }
