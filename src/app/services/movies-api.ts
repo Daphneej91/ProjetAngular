@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -19,5 +19,9 @@ export class MoviesApi {
   }
   deleteMovie(id: number): Observable<void> { 
     return this.httpClient.delete<void>(`${this.url}/${id}`);
+  }
+
+  getMovie(): Observable<Movie>{
+    return this.getMovies().pipe(map(movies => movies[Math.floor(Math.random() * movies.length)]));
   }
 }

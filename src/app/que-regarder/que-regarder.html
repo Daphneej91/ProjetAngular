@@ -1,0 +1,9 @@
+<div *ngIf="movie$ | async as movie">
+<h1>Tu peux regarder: <b>{{movie.title}}</b></h1>
+<dl>
+@if(movie.image) {
+        
+        <dt class="flotte"><img [src]="'http://localhost:8080/movies/' + movie.id + '/image'"  alt=""> </dt>
+    }
+<dd class="resume">{{movie.synopsis}}</dd></dl>
+</div>
