@@ -4,13 +4,15 @@ import { Home } from './home/home';
 import { MoviesList } from './movies-list/movies-list';
 import { NavbarDev } from './navbar-dev/navbar-dev';
 import { NavbarUser } from './navbar-user/navbar-user';
+import { FooterComponent } from './footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser],
+  standalone: true,
+  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser, FooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected readonly title = signal('ProjetTD1');
