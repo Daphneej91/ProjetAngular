@@ -13,7 +13,7 @@ import { NavbarUser } from './navbar-user/navbar-user';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('ProjetTD1');
+  protected readonly title = signal('GrandEcran');
 
   interfaceSelectionnee: 'user' | 'dev' = 'user';
 
