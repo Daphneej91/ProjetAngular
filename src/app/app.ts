@@ -21,7 +21,7 @@ import { FooterComponent } from './footer/footer.component';
   styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = signal('ProjetTD1');
+  protected readonly title = signal('GrandEcran');
 
   interfaceSelectionnee: 'user' | 'dev' = 'user';
 
