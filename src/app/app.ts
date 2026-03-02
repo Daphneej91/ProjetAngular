@@ -15,9 +15,9 @@ import { NavbarUser } from './navbar-user/navbar-user';
 export class App {
   protected readonly title = signal('ProjetTD1');
 
-  interfaceSelectionnee: string = 'user'; // valeur par défaut
+  interfaceSelectionnee: 'user' | 'dev' = 'user';
 
-  onInterfaceSelectionnee(value: string) {
-    this.interfaceSelectionnee = value;
+  changerInterface(nouvelleInterface: 'user' | 'dev') {
+    this.interfaceSelectionnee = nouvelleInterface;
   }
 }

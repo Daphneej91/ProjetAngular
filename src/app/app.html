@@ -1,10 +1,11 @@
-<app-navbar-user [title]="title()"></app-navbar-user>
-(interfaceSelectionnee)="interfaceSelectionnee = $event"
-@if (interfaceSelectionnee=="dev"){
-<app-navbar-dev [title]="title()"></app-navbar-dev>
+@if (interfaceSelectionnee === 'user') {
+<app-navbar-user [title]="title()" (interfaceSelectionnee)="changerInterface($event)">
+</app-navbar-user>
 }
-@if(interfaceSelectionnee=="user") {
-<app-navbar-user [title]="title()"></app-navbar-user>
+
+@if (interfaceSelectionnee === 'dev') {
+<app-navbar-dev [title]="title()" (interfaceSelectionnee)="changerInterface($event)">
+</app-navbar-dev>
 }
 
 <router-outlet></router-outlet>

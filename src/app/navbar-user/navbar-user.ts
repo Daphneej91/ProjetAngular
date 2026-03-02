@@ -10,9 +10,9 @@ import { RouterLink } from '@angular/router';
 export class NavbarUser {
   @Input({ required: true }) title!: string
 
-  @Output() SelectionInterface = new EventEmitter<string>();
+  @Output() interfaceSelectionnee = new EventEmitter<'user' | 'dev'>();
 
-  SelectionnerInterface(interfaceSelectionnee: string) {
-    this.SelectionInterface.emit(interfaceSelectionnee);
+  SelectionnerInterface(interfaceSelectionnee: 'user' | 'dev') {
+    this.interfaceSelectionnee.emit(interfaceSelectionnee);
   }
 }
