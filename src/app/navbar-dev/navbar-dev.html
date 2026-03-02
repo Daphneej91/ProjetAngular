@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light navbar-expand bg-light ps-5">
+    <a class="navbar-brand">{{ title }}</a>
+    <a class="nav-item nav-link ms-3" routerLink="/">Accueil</a>
+    <a class="nav-item nav-link ms-3" routerLink="/movies">Gestion des films</a>
+    <div class="ms-auto d-flex">
+        <button class="btn btn-outline-primary ms-3" (click)="SelectionnerInterface('dev')">Développeur</button>
+        <button class="btn btn-outline-primary ms-3 me-5" (click)="SelectionnerInterface('user')">Utilisateur</button>
+    </div>
+</nav>

@@ -2,11 +2,7 @@
   <div class="layout">
 
     <!-- 左：图片 -->
-    <img
-      class="poster"
-      [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
-      [alt]="movie.title"
-    />
+    <img class="poster" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
 
     <!-- 右：所有文字/按钮都必须在这里 -->
     <div class="right">
@@ -33,7 +29,7 @@
           Acheter
         </button>
 
-        
+
       </div>
 
     </div>
