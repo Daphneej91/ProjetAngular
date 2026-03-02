@@ -1,8 +1,15 @@
-@if (true==true){
-    <app-navbar [title]="title()"></app-navbar>
+@if (interfaceSelectionnee === 'user') {
+  <app-navbar-user 
+    [title]="title()" 
+    (interfaceSelectionnee)="changerInterface($event)">
+  </app-navbar-user>
 }
-@else {
-    <app-nav></app-nav>
+
+@if (interfaceSelectionnee === 'dev') {
+  <app-navbar-dev 
+    [title]="title()" 
+    (interfaceSelectionnee)="changerInterface($event)">
+  </app-navbar-dev>
 }
 
 <router-outlet></router-outlet>
