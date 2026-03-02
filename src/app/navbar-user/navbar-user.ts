@@ -12,7 +12,10 @@ export class NavbarUser {
 
   @Output() interfaceSelectionnee = new EventEmitter<'user' | 'dev'>();
 
-  SelectionnerInterface(interfaceSelectionnee: 'user' | 'dev') {
-    this.interfaceSelectionnee.emit(interfaceSelectionnee);
+  interfaceSelectionneeLocale: 'user' | 'dev' = 'user';
+
+  SelectionnerInterface(userOuDev: 'user' | 'dev') {
+    this.interfaceSelectionneeLocale = userOuDev;
+    this.interfaceSelectionnee.emit(userOuDev);
   }
 }
