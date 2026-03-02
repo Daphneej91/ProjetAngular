@@ -9,17 +9,14 @@ import { RouterModule } from '@angular/router';
   template: `
   <footer class="site-footer">
 
-    <!-- 顶部社交媒体 -->
+  
     <div class="footer-top">
       <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-         
-      
       <a href="https://www.instagram.com" target="_blank">Instagram</a> |
       <a href="https://twitter.com" target="_blank">X</a> |
       <a href="https://www.tiktok.com" target="_blank">TikTok</a>
     </div>
 
-    <!-- 中间影院信息 -->
     <div class="footer-middle">
       <p>Trouver un film avec l’un de nos cinéma partenaire :</p>
       <div class="cinema-list">
@@ -29,7 +26,6 @@ import { RouterModule } from '@angular/router';
       </div>
     </div>
 
-    <!-- 底部 -->
     <div class="footer-bottom">
       <button class="back-to-top" (click)="scrollToTop()">↑ Top</button>
       <p class="copyright">©{{currentYear}} Copyright: takima</p>
@@ -46,7 +42,6 @@ import { RouterModule } from '@angular/router';
       font-family: Arial, sans-serif;
     }
 
-    /* 顶部社交媒体 */
     .footer-top {
       margin-bottom: 1rem;
     }
@@ -65,7 +60,6 @@ import { RouterModule } from '@angular/router';
     }
     .social-icon i { vertical-align: middle; }
 
-    /* 不同社媒颜色 */
     .social-icon.fb { background-color: #3b5998; }
     .social-icon.fb:hover { background-color: #2d4373; }
 
@@ -78,11 +72,9 @@ import { RouterModule } from '@angular/router';
     .social-icon.tiktok { background-color: #010101; }
     .social-icon.tiktok:hover { background-color: #333; }
 
-    /* 中间影院信息 */
     .footer-middle { margin: 1rem 0; font-size: 0.95rem; }
     .cinema-list { margin-top: 0.5rem; line-height: 1.5; }
 
-    /* 底部 */
     .footer-bottom { margin-top: 1rem; }
     .back-to-top {
       margin-bottom: 0.5rem;
