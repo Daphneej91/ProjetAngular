@@ -1,5 +1,5 @@
 <div class="watchlist-container">
-  <h2 class="watchlist-title">Watchlist</h2>
+  <h2 class="watchlist-title">Mon Panier</h2>
 
   <!-- 列表 -->
   <div class="watchlist-grid" *ngIf="movies.length > 0">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <button class="btn btn-sm btn-outline-danger" (click)="remove(movie.title)">
+      <button class="btn btn-sm btn-outline-danger" (click)="removepanier(movie.title)">
         ✕ supprimer
       </button>
 
