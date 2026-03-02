@@ -1,25 +1,8 @@
-<<<<<<< HEAD
-<div class="card shadow m-4" style="width: 18rem; min-height: 55rem">
-    @if(movie.image) {
-    <img [src]="'http://localhost:8080/movies/' + movie.id + '/image'" class="card-img-top" alt="">
-    }
-    <div class="card-body">
-        <h5 class="card-title">{{movie.title}}</h5>
-        <p class="card-text">{{movie.synopsis}}</p>
-        <label class="note">Note: {{movie.rate}}</label>
-    </div>
-</div>
-=======
-
 <div class="card shadow-sm p-3 m-100">
   <div class="layout">
 
     <!-- 左：图片 -->
-    <img
-      class="poster"
-      [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
-      [alt]="movie.title"
-    />
+    <img class="poster" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
 
     <!-- 右：所有文字/按钮都必须在这里 -->
     <div class="right">
@@ -46,11 +29,9 @@
           Acheter
         </button>
 
-        
+
       </div>
 
     </div>
   </div>
 </div>
-
->>>>>>> 9b8dc4362a4bfeade5ecd6071a34946475361f17
