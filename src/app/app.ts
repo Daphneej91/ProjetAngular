@@ -5,14 +5,14 @@ import { MoviesList } from './movies-list/movies-list';
 import { NavbarDev } from './navbar-dev/navbar-dev';
 import { NavbarUser } from './navbar-user/navbar-user';
 
-
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser],
+  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser,],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
 export class App {
+
   protected readonly title = signal('GrandEcran');
 
   interfaceSelectionnee: 'user' | 'dev' = 'user';

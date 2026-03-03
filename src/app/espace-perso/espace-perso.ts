@@ -16,6 +16,7 @@ export class EspacePerso {
 
   remove(title:string):void{
     this.watchlist.remove(title);
+    
   }
 
   get movies() :Movie[]{
