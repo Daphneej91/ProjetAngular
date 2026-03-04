@@ -17,7 +17,8 @@
                     <td>{{movie.director}}</td>
                     <td>{{movie.rate}}</td>
                     <td>{{movie.synopsis}}</td>
-                    <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)"><i class="bi bi-trash"></i></button></td>
+                    <td><button type="button" class="btn btn-danger deleteButton" (click)="deleteMovie(movie.id!)"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-secondary" (click)="updateMovie(movie.id!)"><i class="bi bi-pencil-square"></i></button></td>
                 </tr>
             }
         </table>

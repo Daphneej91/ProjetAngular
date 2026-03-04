@@ -4,7 +4,7 @@ import { Movie } from '../models/movie';
 import { MoviesApi } from '../services/movies-api';
 import { Observable } from 'rxjs';
 import {AsyncPipe, DatePipe} from "@angular/common";
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -16,6 +16,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class MoviesList {
   private readonly moviesApi = inject(MoviesApi)
   movies$: Observable<Movie[]> = this.moviesApi.getMovies()
+  private router = inject(Router);
   
   //@Input({required: true}) movie!: Movie
   private destroyRef = inject(DestroyRef) 
@@ -29,5 +30,9 @@ export class MoviesList {
     this.moviesApi.deleteMovie(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => 
         this.movies = this.movies.filter(film => film.id !== id)
     );
+  }
+
+  updateMovie(id: number): void {
+    this.router.navigate(['/update',id]);
   }
 }

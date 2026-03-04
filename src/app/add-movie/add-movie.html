@@ -1,24 +1,24 @@
 <h1>Ajout d'un film</h1>
 <div class="row">
-    <div class="col=-4">  
+    <div class="form-group">  
     <label for="title">Titre</label>   
-    <input type="text" id="title" name="title" [(ngModel)]="movie.title"/>
+    <input class="form-control" type="text" id="title" name="title" [(ngModel)]="movie.title"/>
     </div>
-    <div class="col=-4">  
+    <div class="form-group">  
     <label for="director">Réalisateur</label>   
-    <input type="text" id="director" name="director" [(ngModel)]="movie.director"/>
+    <input class="form-control" type="text" id="director" name="director" [(ngModel)]="movie.director"/>
     </div>
-    <div class="col=-4">  
+    <div class="form-group">  
     <label for="release">Date de sortie</label>   
-    <input type="date" id="release" name="release" [(ngModel)]="movie.releaseDate"/>
+    <input class="form-control" type="date" id="release" name="release" [(ngModel)]="movie.releaseDate"/>
     </div>
-    <div class="col=-4">  
+    <div class="form-group">  
     <label for="synopsis">Synopsis</label>   
-    <input type="text" id="synopsis" name="synopsis" [(ngModel)]="movie.synopsis"/>
+    <textarea class="form-control" type="text" id="synopsis" name="synopsis" [(ngModel)]="movie.synopsis"></textarea>
     </div>
-    <div class="col=-4">  
-    <label for="synopsis">Image</label>   
-    <input type="text" id="synopsis" name="synopsis" [(ngModel)]="movie.image"/>
+    <div class="form-group">  
+    <label for="synopsis">Image URL</label>   
+    <input class="form-control" type="text" id="synopsis" name="synopsis" [(ngModel)]="movie.image"/>
     </div>
 </div>
 <button class="btn btn-warning" (click)=addMovie()>Ajouter</button>

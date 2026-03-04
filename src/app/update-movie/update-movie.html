@@ -1,0 +1,21 @@
+<h1>Modification des informations</h1>
+<div>
+    <div class="form-group">  
+    <label for="title">Titre</label>   
+    <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="title">
+    </div>
+    <div class="form-group">  
+    <label for="director">Réalisateur</label>   
+    <input class="form-control" type="text" id="director" name="director"  [(ngModel)]="director">
+    </div>
+    <div class="form-group">  
+    <label for="release">Date de sortie</label>   
+    <input class="form-control" type="date" id="release" name="release" value="{{movie()?.releaseDate | date:'yyyy-MM-dd' }}" [(ngModel)]="release">
+    </div>
+    <div class="form-group">  
+    <label for="synopsis">Synopsis</label>   
+    <textarea class="form-control" type="text" id="synopsis" name="synopsis"  [(ngModel)]="synopsis"></textarea>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="updateMovie(movie()!)">Valider</button>
+

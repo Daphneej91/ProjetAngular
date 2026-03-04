@@ -24,4 +24,12 @@ export class MoviesApi {
   getMovie(): Observable<Movie>{
     return this.getMovies().pipe(map(movies => movies[Math.floor(Math.random() * movies.length)]));
   }
+
+  getMoviebyId(id: number): Observable<Movie> {
+    return this.httpClient.get<Movie>(`${this.url}/${id}`);
+  }
+  
+  update(movie: Movie): Observable<Movie>{
+    return this.httpClient.put<Movie>(`${this.url}/${movie.id}`, movie);
+  }
 }
