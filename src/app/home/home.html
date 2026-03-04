@@ -4,7 +4,9 @@
 
       <!-- 左：Films 列表 -->
       <div class="col-lg-8">
-        <h2 class="mb-3">Films</h2>
+        <div class="changertxt">
+        <h2 class="mb-3">🎬 Films</h2>
+        </div>
 
         @let movies = filteredMovies();
         @if (movies.length === 0) {
@@ -21,14 +23,11 @@
       
       <!-- 右：今日热门搜索 -->
       <div class="col-lg-4">
-        <div class="card shadow-sm p-4 position-sticky" style="top: 100px;">
-          <h5 class="mb-3">🔥 Aujourd'hui populaire</h5>
+        <div class="card shadow-sm p-4 position-sticky sidebar-card" style="top: 100px;">
+          <h5 class="mb-3">🎥 Le saviez-vous ?</h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">1. Avatar</li>
-            <li class="list-group-item">2. Titanic</li>
-            <li class="list-group-item">3. Avengers</li>
-            <li class="list-group-item">4. Spider-Man</li>
-            <li class="list-group-item">5. Harry Potter</li>
+            <li class="list-group-item">Titanic était le film le plus cherde l'histoire en 1997.</li>
+            
           </ul>
         </div>
       </div>
