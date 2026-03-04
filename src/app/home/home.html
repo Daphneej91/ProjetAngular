@@ -22,15 +22,49 @@
       </div>
       
       <!-- 右：今日热门搜索 -->
-      <div class="col-lg-4">
-        <div class="card shadow-sm p-4 position-sticky sidebar-card" style="top: 100px;">
-          <h5 class="mb-3">🎥 Le saviez-vous ?</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Titanic était le film le plus cherde l'histoire en 1997.</li>
-            
-          </ul>
-        </div>
-      </div>
+      <!-- 右侧 -->
+<div class="col-lg-4">
+
+  <!-- Fun fact -->
+  <div class="card shadow-sm p-4 sidebar-card mb-4">
+    <h5 class="mb-3">🎥 Le saviez-vous ?</h5>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Titanic était le film le plus cher de l'histoire en 1997.
+      </li>
+    </ul>
+  </div>
+
+  <!-- 评论区 -->
+  <div class="card shadow-sm p-4 sidebar-card">
+
+    <h5 class="mb-3">💬 Avis des utilisateurs</h5>
+
+    <textarea
+      class="form-control mb-3"
+      rows="3"
+      placeholder="Écrire votre commentaire..."
+      [(ngModel)]="newComment">
+    </textarea>
+
+    <button class="btn btn-primary w-100 mb-3" (click)="addComment()">
+      Publier
+    </button>
+
+    <ul class="list-group list-group-flush">
+      @for (comment of comments; track comment) {
+        <li class="list-group-item">
+          {{comment}}
+        </li>
+      }
+    </ul>
+
+  </div>
+
+</div>
+      
+
 
     </div>
   </div>
