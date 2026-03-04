@@ -17,10 +17,14 @@
     
     <div class="ms-auto d-flex">
 
-        <input class="search-taille"
-        placeholder="🔍Rechercher un film..."
+        <div class="search-box me-3">
+        <input
+        class="search-input"
+        placeholder="Rechercher un film..."
         (input)="onSearch($any($event.target).value)"
-    />
+        />
+
+</div>
         
         <button class="btn btn-outline-danger ms-5 fs-6" (click)="selectionnerDev()">Développeur</button>
         <button class="btn btn-outline-primary ms-4 me-5 fs-6"
