@@ -1,9 +1,15 @@
-@if ((mode$ | async) === 'user') {
-<app-navbar-user [title]="title()"></app-navbar-user>
-}
-
 @if ((mode$ | async) === 'dev') {
+
 <app-navbar-dev [title]="title()"></app-navbar-dev>
+
+} @else if ((mode$ | async) === 'user') {
+
+<app-navbar-user [title]="title()"></app-navbar-user>
+
+} @else if ((mode$ | async) === 'ano'){
+
+<app-navbar-ano [title]="title()"></app-navbar-ano>
+
 }
 <router-outlet></router-outlet>
 <app-footer></app-footer>

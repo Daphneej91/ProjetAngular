@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { InterfaceService } from '../services/interface';
+import { Authentification } from '../services/authentification';
 
 @Component({
   selector: 'app-navbar-dev',
@@ -11,15 +12,10 @@ import { InterfaceService } from '../services/interface';
 export class NavbarDev {
   @Input({ required: true }) title!: string
 
-  constructor(private readonly router: Router, private interfaceService: InterfaceService) { }
+  constructor(private readonly router: Router, private interfaceService: InterfaceService, private auth: Authentification) { }
 
-  selectionnerDev() {
-    this.interfaceService.setMode('dev');
-    this.router.navigate(['/']);
-  }
-
-  selectionnerUser() {
-    this.interfaceService.setMode('user');
+  deconnexion() {
+    this.auth.logout();
     this.router.navigate(['/']);
   }
 }

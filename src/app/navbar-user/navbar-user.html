@@ -14,21 +14,14 @@
             <option>Tragedie</option>
         </select>
     </a>
-    
     <div class="ms-auto d-flex">
 
         <div class="search-box me-3">
-        <input
-        class="search-input"
-        placeholder="Rechercher un film..."
-        (input)="onSearch($any($event.target).value)"
-        />
-
-</div>
-        
+            <input class="search-input" placeholder="Rechercher un film..."
+                (input)="onSearch($any($event.target).value)" />
+            <button class="btn btn-secondary ms-3 me-5 fs-5" (click)="deconnexion()">Déconnexion</button>
+        </div>
         <button class="btn btn-outline-danger ms-5 fs-6" (click)="selectionnerDev()">Développeur</button>
-        <button class="btn btn-outline-primary ms-4 me-5 fs-6"
-            (click)="selectionnerUser()">Utilisateur</button>
-
+        <button class="btn btn-outline-primary ms-4 me-5 fs-6" (click)="selectionnerUser()">Utilisateur</button>
     </div>
 </nav>
