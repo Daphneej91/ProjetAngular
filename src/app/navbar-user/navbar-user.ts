@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
 import { InterfaceService } from '../services/interface';
+import { Authentification } from '../services/authentification';
 
 @Component({
   selector: 'app-navbar-user',
@@ -12,7 +13,7 @@ import { InterfaceService } from '../services/interface';
 export class NavbarUser {
   @Input({ required: true }) title!: string
 
-  constructor(private readonly router: Router, private interfaceService: InterfaceService) { }
+  constructor(private readonly router: Router, private interfaceService: InterfaceService, private auth: Authentification) { }
 
   selectionnerDev() {
     this.interfaceService.setMode('dev');
@@ -25,4 +26,9 @@ export class NavbarUser {
   }
 
   searchText: string = '';
+
+  deconnexion() {
+    this.auth.logout();
+    this.router.navigate(['/']);
+  }
 }

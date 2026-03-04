@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h2 class="text-center">Connexion</h2>
+
+    <div class="mb-3">
+        <label>Email :</label>
+        <input type="email" class="form-control" [(ngModel)]="email" placeholder="exemple@abcd.com" />
+    </div>
+
+    <button class="btn btn-primary mb-4" (click)="seConnecter()"> Se connecter </button>
+
+    @if (errorMessage) {
+    <p class="text-danger mt-2">{{ errorMessage }}</p>
+    }
+</div>

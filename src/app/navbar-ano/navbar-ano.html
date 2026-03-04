@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light navbar-expand bg-secondary-subtle ps-5">
+    <a class="navbar-brand" routerLink="/">
+        <img src="logo.png" class="navbar-logo">
+    </a>
+
+    <a class="nav-item nav-link ms-5 my-2 fs-5" routerLink="/espace-perso">Action</a>
+    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Romance</a>
+    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Plus...</a>
+
+
+
+    <div class="ms-auto d-flex">
+        <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
+
+        <button class="btn btn-warning ms-3 fs-5" routerLink="/inscription">Inscription</button>
+        <button class="btn btn-success ms-3 me-5 fs-5" routerLink="/connexion">Connexion</button>
+    </div>
+</nav>

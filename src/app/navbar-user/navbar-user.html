@@ -3,17 +3,15 @@
         <img src="logo.png" class="navbar-logo">
     </a>
 
-    <a class="nav-item nav-link ms-5 my-2 fs-5.5" routerLink="/espace-perso">♥ Mes favoris</a>
-    <a class="nav-item nav-link ms-3 fs-5.5" routerLink="/espace-perso">Action</a>
-    <a class="nav-item nav-link ms-3  fs-5.5" routerLink="/espace-perso">Romance</a>
-    <a class="nav-item nav-link ms-3  fs-5.5" routerLink="/espace-perso">More...</a>
+    <a class="nav-item nav-link ms-5 my-2 fs-5 text-primary" routerLink="/espace-perso">♥ Mes favoris</a>
+    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Action</a>
+    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Romance</a>
+    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">More...</a>
 
 
 
     <div class="ms-auto d-flex">
         <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
-
-        <button class="btn btn-outline-danger ms-3 fs-5" (click)="selectionnerDev()">Développeur</button>
-        <button class="btn btn-outline-primary ms-3 me-5 fs-5" (click)="selectionnerUser()">Utilisateur</button>
+        <button class="btn btn-secondary ms-3 me-5 fs-5" (click)="deconnexion()">Déconnexion</button>
     </div>
 </nav>
