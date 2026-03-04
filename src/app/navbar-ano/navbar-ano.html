@@ -3,11 +3,16 @@
         <img src="logo.png" class="navbar-logo">
     </a>
 
-    <a class="nav-item nav-link ms-5 my-2 fs-5" routerLink="/espace-perso">Action</a>
-    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Romance</a>
-    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Plus...</a>
-
-
+    <a class='nav-item nav-link ms-4 handwritten-text' [routerLink]="['que-regarder']">Tu ne sais pas quoi voir?</a>
+    <a class="nav-item nav-link ms-4 fs-4" routerLink="/">
+        <select class="handwritten-text">
+            <option>Tout les genres</option>
+            <option>Action </option>
+            <option>Romance</option>
+            <option>Comedie</option>
+            <option>Tragedie</option>
+        </select>
+    </a>
 
     <div class="ms-auto d-flex">
         <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
