@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
+import { InterfaceService } from '../services/interface';
 
 @Component({
   selector: 'app-navbar-user',
@@ -11,15 +12,15 @@ import { RouterLink, Router } from '@angular/router';
 export class NavbarUser {
   @Input({ required: true }) title!: string
 
-  @Output() interfaceSelectionnee = new EventEmitter<'user' | 'dev'>();
+  constructor(private readonly router: Router, private interfaceService: InterfaceService) { }
 
-  interfaceSelectionneeLocale: 'user' | 'dev' = 'user';
+  selectionnerDev() {
+    this.interfaceService.setMode('dev');
+    this.router.navigate(['/']);
+  }
 
-  constructor(private readonly router: Router) { }
-
-  SelectionnerInterface(userOuDev: 'user' | 'dev') {
-    this.interfaceSelectionneeLocale = userOuDev;
-    this.interfaceSelectionnee.emit(userOuDev);
+  selectionnerUser() {
+    this.interfaceService.setMode('user');
     this.router.navigate(['/']);
   }
 

@@ -2,23 +2,18 @@
     <a class="navbar-brand" routerLink="/">
         <img src="logo.png" class="navbar-logo">
     </a>
-    
+
     <a class="nav-item nav-link ms-5 my-2 fs-5.5" routerLink="/espace-perso">♥ Mes favoris</a>
     <a class="nav-item nav-link ms-3 fs-5.5" routerLink="/espace-perso">Action</a>
     <a class="nav-item nav-link ms-3  fs-5.5" routerLink="/espace-perso">Romance</a>
     <a class="nav-item nav-link ms-3  fs-5.5" routerLink="/espace-perso">More...</a>
 
-    
-    
+
+
     <div class="ms-auto d-flex">
-        <input class="search-taille"
-      type="text"
-      placeholder="🔍Rechercher un film..."
-      [(ngModel)]="searchText"
-    />
-        
-        <button class="btn btn-outline-danger ms-5 fs-6" (click)="SelectionnerInterface('dev')">Développeur</button>
-        <button class="btn btn-outline-primary ms-4 me-5 fs-6"
-            (click)="SelectionnerInterface('user')">Utilisateur</button>
+        <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
+
+        <button class="btn btn-outline-danger ms-3 fs-5" (click)="selectionnerDev()">Développeur</button>
+        <button class="btn btn-outline-primary ms-3 me-5 fs-5" (click)="selectionnerUser()">Utilisateur</button>
     </div>
 </nav>
