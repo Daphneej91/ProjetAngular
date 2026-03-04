@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -21,6 +21,15 @@ export class MoviesApi {
     return this.httpClient.delete<void>(`${this.url}/${id}`);
   }
 
-  
+  getMovie(): Observable<Movie>{
+    return this.getMovies().pipe(map(movies => movies[Math.floor(Math.random() * movies.length)]));
+  }
 
+  getMoviebyId(id: number): Observable<Movie> {
+    return this.httpClient.get<Movie>(`${this.url}/${id}`);
+  }
+  
+  update(movie: Movie): Observable<Movie>{
+    return this.httpClient.put<Movie>(`${this.url}/${movie.id}`, movie);
+  }
 }

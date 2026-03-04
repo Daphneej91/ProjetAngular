@@ -1,6 +1,14 @@
 <div class="card-shadow">
-  <img class="poster-taille" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
 
+    <!-- 左：图片 -->
+      @if(movie.image) {
+            @if(movie.image.startsWith("http")){
+                <img class="poster-taille" [src]="movie.image" [alt]="movie.title">
+            }
+            @else{
+             <img class="poster-taille" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
+            }
+        }
   <div class="movie-info">
     <div class="title-row">
       <h3 class="movie-title">{{ movie.title }}</h3>
@@ -9,31 +17,31 @@
         <span class="star">⭐</span>
         <span>{{ movie.rate }}/5</span>
       </div>
+
     </div>
 
     <p class="movie-synopsis">{{ movie.synopsis }}</p>
 
     @if ((mode$ | async) === 'user') {
-
-    <button (click)="add()" class="btn btn-outline-primary">
-      Ajouter à ma liste
-    </button>
-
-    <button (click)="add()" class="btn btn-outline-primary ms-3 ">
-      Regarder
-    </button>
-
-    }
+        
+        <button id="liste" (click)="add()" class="btn btn-outline-primary text-nowrap" data-bs-toggle="button">
+          @if (inList()==true){
+          Ajouter à ma liste
+          }
+          @else {Retirer à ma liste}
+        </button>
+       
+        <div class="mt-2">
+        <button (click)="addpanier()" class="btn btn-outline-primary text-nowrap">
+          @if (inpanier()==true){
+          Regardé
+          }
+          @else {Non regardé}
+        </button>
+        </div>
+      }
 
     @if ((mode$ | async) === 'dev') {
-
-    <button (click)="add()" class="btn btn-outline-primary" disabled>
-      Ajouter à ma liste
-    </button>
-
-    <button (click)="add()" class="btn btn-outline-primary ms-3 " disabled>
-      Regarder
-    </button>
 
     }
 

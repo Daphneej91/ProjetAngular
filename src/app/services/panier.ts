@@ -19,7 +19,7 @@ export class Panier {
     }
   
     remove(title:string):void{
-      this.list=this.list.filter(m=>m.title!==m.title);
+      this.list=this.list.filter(m=>m.title !==title);
       
   
     }

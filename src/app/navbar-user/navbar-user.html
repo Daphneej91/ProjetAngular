@@ -2,16 +2,26 @@
     <a class="navbar-brand" routerLink="/">
         <img src="logo.png" class="navbar-logo">
     </a>
-
-    <a class="nav-item nav-link ms-5 my-2 fs-5 text-primary" routerLink="/espace-perso">♥ Mes favoris</a>
-    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Action</a>
-    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">Romance</a>
-    <a class="nav-item nav-link ms-3 fs-5" routerLink="/espace-perso">More...</a>
-
-
-
+    <a class="nav-item nav-link ms-3 fs-4" routerLink="/espace-perso"><img src="Fav.png" class="fav"></a>
+    <a class="nav-item nav-link ms-3 handwritten-text" routerLink="/mon-panier">Vu</a>
+    <a class='nav-item nav-link ms-4 handwritten-text' [routerLink]="['que-regarder']">Tu ne sais pas quoi voir?</a>
+    <a class="nav-item nav-link ms-4 fs-4" routerLink="/">
+        <select class="handwritten-text">
+            <option>Tout les genres</option>
+            <option>Action </option>
+            <option>Romance</option>
+            <option>Comedie</option>
+            <option>Tragedie</option>
+        </select>
+    </a>
     <div class="ms-auto d-flex">
-        <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
-        <button class="btn btn-secondary ms-3 me-5 fs-5" (click)="deconnexion()">Déconnexion</button>
+
+        <div class="search-box me-3">
+            <input class="search-input" placeholder="Rechercher un film..."
+                (input)="onSearch($any($event.target).value)" />
+            <button class="btn btn-secondary ms-3 me-5 fs-5" (click)="deconnexion()">Déconnexion</button>
+        </div>
+        <button class="btn btn-outline-danger ms-5 fs-6" (click)="selectionnerDev()">Développeur</button>
+        <button class="btn btn-outline-primary ms-4 me-5 fs-6" (click)="selectionnerUser()">Utilisateur</button>
     </div>
 </nav>

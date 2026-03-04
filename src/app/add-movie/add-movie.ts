@@ -19,7 +19,7 @@ export class AddMovie {
     synopsis: '',
     id: undefined,
     rate: undefined, 
-    image: undefined
+    image: '',
   }
   private readonly moviesApi = inject(MoviesApi)
   private router =inject(Router)
