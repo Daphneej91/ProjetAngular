@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
 
     <!-- 中间影院信息 -->
     <div class="footer-middle">
-      <p>Trouver un film avec l’un de nos cinéma partenaire :</p>
+      <p>Trouver un film avec l'un de nos cinéma partenaire :</p>
       <div class="cinema-list">
         <strong>Paris :</strong> Cachan, La Defence, Creteil<br>
         <strong>Montpellier :</strong> Boutonnet, Beaux Arts, Gambetta<br>

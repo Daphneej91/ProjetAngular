@@ -4,7 +4,7 @@ import { Home } from './home/home';
 import { MoviesList } from './movies-list/movies-list';
 import { NavbarDev } from './navbar-dev/navbar-dev';
 import { NavbarUser } from './navbar-user/navbar-user';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './footer/footer';
 
 
 
@@ -12,13 +12,14 @@ import { FooterComponent } from './footer/footer.component';
   selector: 'app-root',
 
   standalone: true,
-  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser, FooterComponent],
+  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser,FooterComponent ],
 
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = signal('ProjetTD1');
+
+  protected readonly title = signal('GrandEcran');
 
   interfaceSelectionnee: 'user' | 'dev' = 'user';
 
