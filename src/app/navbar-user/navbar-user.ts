@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-user',
@@ -15,9 +15,12 @@ export class NavbarUser {
 
   interfaceSelectionneeLocale: 'user' | 'dev' = 'user';
 
+  constructor(private readonly router: Router) { }
+
   SelectionnerInterface(userOuDev: 'user' | 'dev') {
     this.interfaceSelectionneeLocale = userOuDev;
     this.interfaceSelectionnee.emit(userOuDev);
+    this.router.navigate(['/']);
   }
 
   searchText: string = '';

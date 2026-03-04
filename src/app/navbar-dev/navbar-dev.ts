@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-dev',
@@ -14,8 +14,11 @@ export class NavbarDev {
 
   interfaceSelectionneeLocale: 'user' | 'dev' = 'user';
 
+  constructor(private readonly router: Router) { }
+
   SelectionnerInterface(userOuDev: 'user' | 'dev') {
     this.interfaceSelectionneeLocale = userOuDev;
     this.interfaceSelectionnee.emit(userOuDev);
+    this.router.navigate(['/']);
   }
 }
