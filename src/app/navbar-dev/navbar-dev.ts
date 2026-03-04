@@ -18,4 +18,13 @@ export class NavbarDev {
     this.auth.logout();
     this.router.navigate(['/']);
   }
+  selectionnerDev() {
+    this.interfaceService.setMode('dev');
+    this.router.navigate(['/']);
+  }
+
+  selectionnerUser() {
+    this.interfaceService.setMode('user');
+    this.router.navigate(['/']);
+  }
 }
