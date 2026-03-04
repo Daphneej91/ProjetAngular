@@ -7,10 +7,13 @@ import { NavbarUser } from './navbar-user/navbar-user';
 import { FooterComponent } from './footer/footer.component';
 
 
+
 @Component({
   selector: 'app-root',
+
   standalone: true,
   imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser, FooterComponent],
+
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
