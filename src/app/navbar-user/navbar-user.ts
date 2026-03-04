@@ -1,7 +1,9 @@
-import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule, inject } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
+import { Search } from '../services/search';
 import { InterfaceService } from '../services/interface';
+
 
 @Component({
   selector: 'app-navbar-user',
@@ -24,5 +26,10 @@ export class NavbarUser {
     this.router.navigate(['/']);
   }
 
-  searchText: string = '';
+  private readonly search = inject(Search);
+
+  onSearch(value: string) {
+  this.search.query.set(value);
+}
+
 }

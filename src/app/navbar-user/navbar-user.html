@@ -6,9 +6,15 @@
     <a class="nav-item nav-link ms-3 fs-4" routerLink="/mon-panier">Mon Panier</a>
     <a class='nav-item nav-link ms-3 fs-4' [routerLink]="['que-regarder']">Tu ne sais pas quoi voir?</a>
     <div class="ms-auto d-flex">
-        <input class="search-taille" type="text" placeholder="🔍Rechercher un film..." [(ngModel)]="searchText" />
 
-        <button class="btn btn-outline-danger ms-3 fs-5" (click)="selectionnerDev()">Développeur</button>
-        <button class="btn btn-outline-primary ms-3 me-5 fs-5" (click)="selectionnerUser()">Utilisateur</button>
+        <input class="search-taille"
+        placeholder="🔍Rechercher un film..."
+        (input)="onSearch($any($event.target).value)"
+    />
+        
+        <button class="btn btn-outline-danger ms-5 fs-6" (click)="selectionnerDev()">Développeur</button>
+        <button class="btn btn-outline-primary ms-4 me-5 fs-6"
+            (click)="selectionnerUser()">Utilisateur</button>
+
     </div>
 </nav>
