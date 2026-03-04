@@ -3,6 +3,8 @@
         <img src="logo.png" class="navbar-logo">
     </a>
     <a class="nav-item nav-link ms-3 fs-4" routerLink="/espace-perso"><img src="Fav.png" class="fav"></a>
+    <a class="nav-item nav-link ms-3 fs-4" routerLink="/mon-panier">Vu</a>
+    <a class='nav-item nav-link ms-3 fs-4' [routerLink]="['que-regarder']">Tu ne sais pas quoi voir?</a>
     <a class="nav-item nav-link ms-3 fs-4" routerLink="/">
         <select >
             <option>Tout les genres</option>
@@ -12,7 +14,7 @@
             <option>Tragedie</option>
         </select>
     </a>
-    <a class='nav-item nav-link ms-3 fs-4' [routerLink]="['que-regarder']">Tu ne sais pas quoi voir?</a>
+    
     <div class="ms-auto d-flex">
 
         <input class="search-taille"
