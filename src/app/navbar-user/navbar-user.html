@@ -12,9 +12,8 @@
     
     <div class="ms-auto d-flex">
         <input class="search-taille"
-      type="text"
-      placeholder="🔍Rechercher un film..."
-      [(ngModel)]="searchText"
+        placeholder="🔍Rechercher un film..."
+        (input)="onSearch($any($event.target).value)"
     />
         
         <button class="btn btn-outline-danger ms-5 fs-6" (click)="SelectionnerInterface('dev')">Développeur</button>
