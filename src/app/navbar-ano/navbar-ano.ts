@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Search } from '../services/search';
 
 @Component({
   selector: 'app-navbar-ano',
@@ -11,4 +12,10 @@ import { RouterLink } from '@angular/router';
 export class NavbarAno {
 
   searchText: string = '';
+
+  private readonly search = inject(Search);
+
+  onSearch(value: string) {
+    this.search.query.set(value);
+  }
 }

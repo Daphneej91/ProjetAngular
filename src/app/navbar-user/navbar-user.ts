@@ -38,7 +38,6 @@ export class NavbarUser {
 
   onSearch(value: string) {
     this.search.query.set(value);
-
   }
 
 }
