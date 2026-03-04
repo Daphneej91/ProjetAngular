@@ -2,7 +2,14 @@
   <div class="layout">
 
     <!-- 左：图片 -->
-    <img class="poster" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
+      @if(movie.image) {
+            @if(movie.image.startsWith("http")){
+                <img class="poster" [src]="movie.image" [alt]="movie.title">
+            }
+            @else{
+             <img class="poster" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
+            }
+        }
 
     <!-- 右：所有文字/按钮都必须在这里 -->
     <div class="right">
@@ -21,12 +28,18 @@
       </p>
 
       <div class="actions">
-        <button (click)="add()" class="btn btn-outline-primary text-nowrap">
+        <button id="liste" (click)="add()" class="btn btn-outline-primary text-nowrap" data-bs-toggle="button">
+          @if (inList()==true){
           Ajouter à ma liste
+          }
+          @else {Retirer à ma liste}
         </button>
 
         <button (click)="addpanier()" class="btn btn-outline-primary text-nowrap">
-          Ajouter à mon panier
+          @if (inpanier()==true){
+          Regarder
+          }
+          @else {Non regarder}
         </button>
 
         

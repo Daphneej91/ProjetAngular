@@ -5,12 +5,18 @@
   <div class="watchlist-grid" *ngIf="movies.length > 0">
     <div class="watchlist-item card shadow-sm p-2" *ngFor="let movie of movies">
       
-      <img
-        class="watchlist-poster"
-        [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
-        [alt]="movie.title"
-      />
-
+       @if(movie.image) {
+            @if(movie.image.startsWith("http")){
+                <img class="watchlist-poster" [src]="movie.image" [alt]="movie.title">
+            }
+            @else{
+             <img
+                class="watchlist-poster"
+                [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
+                [alt]="movie.title"
+              />
+            }
+        }
       <div class="watchlist-info">
         <h5 class="watchlist-movie-title">{{ movie.title }}</h5>
         <div class="rating">
