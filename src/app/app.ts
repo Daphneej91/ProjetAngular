@@ -30,12 +30,9 @@ export class App {
   get mode$() {
     return this.interfaceService.mode$;
   }
-<<<<<<< HEAD
 
   changerMode(role: 'dev' | 'user') {
-    this.interfaceService.setMode(role); // Force la navbar Dev/User immédiatement
+    this.interfaceService.setMode(role);
   }
 }
-=======
-}
->>>>>>> a9bd14359bc25841aa809738d997fb6318186847
+
