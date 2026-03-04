@@ -1,9 +1,5 @@
 <div class="card-shadow">
-  <img
-    class="poster-taille"
-    [src]="'http://localhost:8080/movies/' + movie.id + '/image'"
-    [alt]="movie.title"
-  />
+  <img class="poster-taille" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
 
   <div class="movie-info">
     <div class="title-row">
@@ -17,12 +13,29 @@
 
     <p class="movie-synopsis">{{ movie.synopsis }}</p>
 
+    @if ((mode$ | async) === 'user') {
+
     <button (click)="add()" class="btn btn-outline-primary">
       Ajouter à ma liste
     </button>
 
     <button (click)="add()" class="btn btn-outline-primary ms-3 ">
-     Regarder
+      Regarder
     </button>
+
+    }
+
+    @if ((mode$ | async) === 'dev') {
+
+    <button (click)="add()" class="btn btn-outline-primary" disabled>
+      Ajouter à ma liste
+    </button>
+
+    <button (click)="add()" class="btn btn-outline-primary ms-3 " disabled>
+      Regarder
+    </button>
+
+    }
+
   </div>
 </div>

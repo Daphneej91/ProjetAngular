@@ -1,13 +1,9 @@
-@if (interfaceSelectionnee === 'user') {
-<app-navbar-user [title]="title()" (interfaceSelectionnee)="changerInterface($event)">
-</app-navbar-user>
-
+@if ((mode$ | async) === 'user') {
+<app-navbar-user [title]="title()"></app-navbar-user>
 }
 
-@if (interfaceSelectionnee === 'dev') {
-<app-navbar-dev [title]="title()" (interfaceSelectionnee)="changerInterface($event)">
-</app-navbar-dev>
-
+@if ((mode$ | async) === 'dev') {
+<app-navbar-dev [title]="title()"></app-navbar-dev>
 }
 
 <router-outlet></router-outlet>
