@@ -2,9 +2,18 @@
     height: 80px;
 }
 
+.fav {
+    height: 80px;
+}
 .search-taille{
     height: 40px;
     width: 250px;
     margin-top: auto;
+}
+select{
+  border: none;          /* enlève la bordure */
+  background: transparent; /* rend le fond transparent */
+  color: inherit;        /* hérite de la couleur du texte du parent */
+  font: inherit;         /* hérite de la police */
 }
 

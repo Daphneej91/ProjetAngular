@@ -1,9 +1,13 @@
 <div *ngIf="movie$ | async as movie">
 <h1>Tu peux regarder: <b>{{movie.title}}</b></h1>
 <figure>
-@if(movie.image) {
-        
-         <img class="flotte" [src]="'http://localhost:8080/movies/' + movie.id + '/image'"  alt="">
-    }
+ @if(movie.image) {
+            @if(movie.image.startsWith("http")){
+            <img class="flotte" [src]="movie.image" [alt]="movie.title">
+            }
+            @else{
+             <img class="flotte" [src]="'http://localhost:8080/movies/' + movie.id + '/image'" [alt]="movie.title" />
+            }
+        }
 <figcaption >{{movie.synopsis}}</figcaption>
 </figure>
