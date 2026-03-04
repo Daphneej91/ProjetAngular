@@ -33,6 +33,16 @@ export class Home {
     );
   });
   
+  comments: string[] = [];
+
+newComment: string = '';
+
+addComment(){
+  if(this.newComment.trim() !== ''){
+    this.comments.unshift(this.newComment);
+    this.newComment = '';
+  }
+}
   
 
   
