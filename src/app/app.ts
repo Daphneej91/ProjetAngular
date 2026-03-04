@@ -4,10 +4,11 @@ import { Home } from './home/home';
 import { MoviesList } from './movies-list/movies-list';
 import { NavbarDev } from './navbar-dev/navbar-dev';
 import { NavbarUser } from './navbar-user/navbar-user';
+import { FooterComponent } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser,],
+  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser,FooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })

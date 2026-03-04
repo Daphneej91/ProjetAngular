@@ -1,14 +1,35 @@
 <main>
   <div class="container mt-4">
-    <h2 class="mb-3">Films</h2>
+    <div class="row g-4">
 
-    @if (movies$ | async; as movies) {
-    <div class="d-flex flex-column gap-3">
-      @for (movie of movies; track movie.id) {
-      <app-movie-card [movie]="movie" (favorite)="onFavorite($event)" (buy)="onBuy($event)">
-      </app-movie-card>
-      }
+      <!-- 左：Films 列表 -->
+      <div class="col-lg-8">
+        <h2 class="mb-3">Films</h2>
+
+        @if (movies$ | async; as movies) {
+          <div class="d-flex flex-column gap-3">
+            @for (movie of movies; track movie.id) {
+              <app-movie-card [movie]="movie"></app-movie-card>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- 右：今日热门搜索（只出现一次） -->
+      <div class="col-lg-4">
+        <div class="card shadow-sm p-4 position-sticky" style="top: 100px;">
+          <h5 class="mb-3">🔥 Aujourd'hui populaire</h5>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">1. Avatar</li>
+            <li class="list-group-item">2. Titanic</li>
+            <li class="list-group-item">3. Avengers</li>
+            <li class="list-group-item">4. Spider-Man</li>
+            <li class="list-group-item">5. Harry Potter</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-    }
   </div>
 </main>

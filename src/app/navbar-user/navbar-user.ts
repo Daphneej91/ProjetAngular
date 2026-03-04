@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-user',
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './navbar-user.html',
   styleUrl: './navbar-user.scss',
 })
@@ -18,4 +19,6 @@ export class NavbarUser {
     this.interfaceSelectionneeLocale = userOuDev;
     this.interfaceSelectionnee.emit(userOuDev);
   }
+
+  searchText: string = '';
 }

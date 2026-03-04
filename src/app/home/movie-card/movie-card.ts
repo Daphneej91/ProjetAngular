@@ -26,9 +26,6 @@ export class MovieCard {
   }
 
   
-
-
-  
  
   
   
