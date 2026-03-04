@@ -3,18 +3,20 @@ import { Input } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { Watchlist } from '../../services/watchlist';
 import { Panier } from '../../services/panier';
+import { InterfaceService } from '../../services/interface';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-movie-card',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './movie-card.html',
   styleUrl: './movie-card.scss',
 })
 export class MovieCard {
-  @Input({required: true}) movie!: Movie
+  @Input({ required: true }) movie!: Movie
 
-  constructor(private watchlist: Watchlist, private panier: Panier) {}
+  constructor(private watchlist: Watchlist, private panier: Panier, private interfaceService: InterfaceService) { }
 
   add():void{
     //var bouton = document.getElementById("liste");
@@ -54,6 +56,10 @@ export class MovieCard {
     else{
       return false
     }
+  }
+
+  get mode$() {
+    return this.interfaceService.mode$;
   }
   
 

@@ -1,51 +1,49 @@
-.layout{
-  display: flex;          
+
+.card-shadow {
+  display: flex;
+  align-items: flex-start;
   gap: 24px;
-  
+
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+
+  /* 不要写死 1500px！用 max-width 更合理 */
+  max-width: 900px;
 }
 
-/* 左图固定大小 */
-.poster{
-  width: 260px;
-  height: 360px;
-  
+.poster-taille {
+  width: 200px;
+  height: 300px;        /* 给一个固定高度更稳定 */
+  object-fit: cover;
+  border-radius: 8px;
+
+  flex-shrink: 0;       /* 关键：图片不被挤压变形 */
 }
 
-/* ✅ 右侧必须撑满剩余空间，否则文字会掉到下面 */
-.right{
-  flex: 1 ;
-  min-width: 0;
+.movie-info {
+  flex: 1;              /* 关键：文字区域占剩余空间 */
+  min-width: 0;         /* 关键：防止长文本撑破布局 */
 }
 
-/* 标题 + 评分一行，左右分开 */
-.topline{
+.title-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
-.title{
+.movie-title {
   margin: 0;
+  font-size: 24px;
 }
 
-/* 评分样式 */
-.rating{
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-  font-weight: 600;
+.movie-rate {
+  white-space: nowrap;  /* 评分不换行 */
 }
 
-.synopsis{
-  margin-top: 12px;
-  margin-bottom: 18px;
-  color: #6c757d;
+.movie-synopsis {
+  margin: 12px 0 16px;
   line-height: 1.5;
 }
 
-.actions{
-  display: flex;
-  gap: 12px;
-}

@@ -5,15 +5,12 @@ import { MoviesList } from './movies-list/movies-list';
 import { NavbarDev } from './navbar-dev/navbar-dev';
 import { NavbarUser } from './navbar-user/navbar-user';
 import { FooterComponent } from './footer/footer';
-
-
+import { InterfaceService } from './services/interface';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-
-  standalone: true,
-  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser,FooterComponent ],
-
+  imports: [RouterOutlet, Home, MoviesList, NavbarDev, NavbarUser, FooterComponent, AsyncPipe],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
@@ -21,9 +18,9 @@ export class App {
 
   protected readonly title = signal('GrandEcran');
 
-  interfaceSelectionnee: 'user' | 'dev' = 'user';
+  constructor(private interfaceService: InterfaceService) { }
 
-  changerInterface(nouvelleInterface: 'user' | 'dev') {
-    this.interfaceSelectionnee = nouvelleInterface;
+  get mode$() {
+    return this.interfaceService.mode$;
   }
 }
