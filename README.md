@@ -26,7 +26,7 @@ docker compose up
 
 Place toi dans le repertoire de ton choix sur ton ordinateur et ouvre une interface de commande. 
 Tape la commande suivante :
-https://github.com/Daphneej91/ProjetAngular.git
+git clone https://github.com/Daphneej91/ProjetAngular.git
 
 ### Etape 5: Ouvre le projet dans l'IDE de ton choix
 
