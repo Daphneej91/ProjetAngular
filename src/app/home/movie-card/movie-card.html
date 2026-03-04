@@ -42,20 +42,6 @@
 
     @if ((mode$ | async) === 'dev') {
 
-        <button id="liste" (click)="add()" class="btn btn-outline-primary text-nowrap" data-bs-toggle="button">
-          @if (inList()==true){
-          Ajouter à ma liste
-          }
-          @else {Retirer à ma liste}
-        </button>
-
-        <button (click)="addpanier()" class="btn btn-outline-primary text-nowrap">
-          @if (inpanier()==true){
-          Regardé
-          }
-          @else {Non regardé}
-        </button>
-
     }
 
   </div>
